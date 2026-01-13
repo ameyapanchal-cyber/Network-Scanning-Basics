@@ -1,0 +1,35 @@
+## Objective
+To understand how network scanning is performed and how services running on open ports are enumerated using Nmap.
+
+## What is Network Scanning?
+Network scanning is the process of identifying open ports on the target system along with the services running on those ports.
+
+## Tool Used
+- Nmap
+
+## Scan Performed
+- Initial automation scan using default scripts
+- Manual scanning using SYN and TCP scans for deeper analysis
+
+## Command Used
+```bash
+nmap 192.168.154.130 -v -p 1-65535 -sV -sC -O
+
+nmap 192.168.154.130 -v -p 1-65535 -sV -sS -A -O -oX ameya.xml
+
+## Explanation of Scan Flags
+
+- -p 1-65535 : Scans all TCP ports to avoid missing hidden services
+- -sS : SYN scan for stealth and speed
+- -sV : Service version detection
+- -sC : Runs default Nmap scripts for basic enumeration
+- -A : Enables OS detection, version detection, script scanning, and traceroute
+- -O : Attempts OS fingerprinting
+- -oX : Saves output in XML format for future parsing and automation
+
+## Why Network Scanning is Important in Pentesting
+
+Network scanning helps identify the attack surface of a target by revealing
+open ports and services. Each exposed service can potentially contain
+misconfigurations or vulnerabilities that can be exploited in later phases
+of penetration testing.
