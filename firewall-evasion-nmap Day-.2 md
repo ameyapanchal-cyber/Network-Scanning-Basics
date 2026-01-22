@@ -1,0 +1,21 @@
+## Objective
+To understand how firewalls detect scanning activity and how different
+Nmap techniques can be used to evade or bypass firewall rules.
+
+## Techniques Tested
+- Packet fragmentation (-f)
+- MTU manipulation (--mtu)
+- Decoy scanning (-D)
+- TCP connect scan (-sT)
+- Idle/Zombie scan (-sI)
+
+## Commands Used
+
+### Packet Fragmentation
+```bash
+nmap -sS -f 192.168.154.130
+nmap -sS -mtu 192.168.154.130 --source-porn 80
+nmap -sS --data-length 24
+nmap 192.168.154.130  -v -D RND:8
+nmap -v -p 80 --script=ipidseq* -iR 100 -open
+nmap -sI 34.197.28.130 192.168.154.130 -v -Pn
