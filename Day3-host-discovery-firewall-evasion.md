@@ -13,11 +13,12 @@ and how Nmap scan types react under restricted environments.
 
 ## Commands Used
 '''bash
-nmap 157.240.0.174 -v -F
-nmap 157.240.0.174 -v -Pn
+
+nmap 157.240.0.xxx -v -F
+nmap 157.240.0.xxx -v -Pn
 nmap 157.240.0.0/24 -v -sn
 nmap 34.120.54.0/24 -vv -sX
-nmap 142.250.184.243 -vv -p- T4
+nmap 142.250.184.xxx -vv -p- -T4
 nmap 34.120.54.0/24 -vv -A
 
 ## Observations
